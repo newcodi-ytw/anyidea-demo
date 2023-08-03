@@ -39,7 +39,7 @@ class PageSignIn extends StatelessWidget {
               children: [
                 ColorFiltered(
                   colorFilter: const ColorFilter.linearToSrgbGamma(),
-                  child: Image(image: AssetImage(ImagePath.background_demo)),
+                  child: Image(image: AssetImage(ImagePath.backgroundTop)),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
