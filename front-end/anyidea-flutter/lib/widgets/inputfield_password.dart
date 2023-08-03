@@ -1,8 +1,6 @@
 import 'package:anyideas/helpers/custom_validation_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
-
-import '../constants/pallete.dart';
 import 'outline_border.dart';
 
 class InputFieldPassword extends StatefulWidget {

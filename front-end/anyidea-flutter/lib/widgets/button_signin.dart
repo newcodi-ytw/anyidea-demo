@@ -1,4 +1,3 @@
-
 import 'package:anyideas/constants/pallete.dart';
 import 'package:flutter/material.dart';
 
