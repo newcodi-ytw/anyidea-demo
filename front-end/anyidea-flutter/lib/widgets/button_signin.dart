@@ -1,12 +1,11 @@
-import 'dart:ui';
 
 import 'package:anyideas/constants/pallete.dart';
 import 'package:flutter/material.dart';
 
-class LoginButton extends StatelessWidget {
+class ButtonLogin extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
-  const LoginButton({
+  const ButtonLogin({
     super.key,
     required this.title,
     required this.onPressed,
@@ -22,7 +21,7 @@ class LoginButton extends StatelessWidget {
             Pallete.gradient2,
             Pallete.gradient3,
           ],
-          begin: Alignment.topCenter,
+          begin: Alignment.topLeft,
           end: Alignment.bottomRight
         ),
         borderRadius: BorderRadius.circular(10)
@@ -37,6 +36,7 @@ class LoginButton extends StatelessWidget {
         child: Text(
           title,
           style: const TextStyle(
+            color: Pallete.backgroundColor,
             fontWeight: FontWeight.w600,
             fontSize: 17
           ),

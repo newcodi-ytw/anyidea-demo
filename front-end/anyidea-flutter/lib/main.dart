@@ -1,5 +1,5 @@
 import 'package:anyideas/constants/pallete.dart';
-import 'package:anyideas/pages/loginPage.dart';
+import 'package:anyideas/pages/page_auth.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,11 +12,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'AnyIdea Demo',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Pallete.backgroundColor
       ),
-      home: LoginPage(),
+      home: const PageAuth(),
     );
   }
 }
