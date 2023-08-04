@@ -23,16 +23,13 @@ class _PageAuthState extends State<PageAuth> {
   }
 
   _checkLoginStatus() async {
-    SharedPreferences sp = await SharedPreferences.getInstance();
-    var token = sp.getString('token');
+    SharedPreferences localStorage = await SharedPreferences.getInstance();
+    var token = localStorage.getString('token');
     if (token != null) {
         setState(() {
             _isLoggedIn = true;
-            _authLv = sp.getInt('authlv') as AuthLevel;
+            _authLv = localStorage.getInt('authlv') as AuthLevel;
         });
-    } else {
-        //ask from server
-        print("not logged in!");
     }
   }
 
@@ -48,12 +45,12 @@ class _PageAuthState extends State<PageAuth> {
         }
         default:
         {
-            return PageSignIn();
+            return const PageSignIn();
         }
       }
     }
 
-    return PageSignIn();
+    return const PageSignIn();
   }
 
   @override
