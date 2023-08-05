@@ -1,0 +1,15 @@
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/icudtl.dat
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/flutter_windows.dll
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/AssetManifest.bin
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/assets/images/calendar-1.png
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/assets/images/calendar-2.png
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/assets/images/demo.png
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/assets/images/light-1.png
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/assets/images/magni-1.jpeg
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag

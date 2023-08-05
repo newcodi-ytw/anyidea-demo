@@ -1,0 +1,10 @@
+^C:\CODI_DEV\ANYIDEA-DEMO\FRONT-END\ANYIDEA-FLUTTER\BUILD\WINDOWS\CMAKEFILES\AC91E0C82C6C3454B0BFDFA56CA12332\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/codi_dev/anyidea-demo/front-end/anyidea-flutter/windows -BC:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/codi_dev/anyidea-demo/front-end/anyidea-flutter/build/windows/anyideas.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
