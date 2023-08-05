@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
-
-import '../constants/pallete.dart';
 
 extension CustomValidationBuilder on ValidationBuilder {
   password() => minLength(5).maxLength(10).add(
@@ -11,7 +8,7 @@ extension CustomValidationBuilder on ValidationBuilder {
         },
       ).build();
 
-  userInfo() => minLength(5).maxLength(10).add(
+  userInfo() => minLength(5).maxLength(15).add(
         (value) {
           /* custom validation */
           return null;

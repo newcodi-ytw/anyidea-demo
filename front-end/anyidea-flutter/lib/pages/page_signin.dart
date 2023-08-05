@@ -1,12 +1,12 @@
 import 'dart:convert';
 
 import 'package:anyideas/api/api_center.dart';
+import 'package:anyideas/models/account_user.dart';
 import 'package:anyideas/pages/page_auth.dart';
 import 'package:anyideas/widgets/button_signin.dart';
 import 'package:anyideas/widgets/inputfield_password.dart';
 import 'package:anyideas/widgets/inputfield_userInfo.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../constants/image_path.dart';
 import '../helpers/custom_snackbar.dart';
 
@@ -38,33 +38,37 @@ class _PageSignInState extends State<PageSignIn> {
 
   @override
   Widget build(BuildContext context) {
-    gotoAuthPage(){
-      Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const PageAuth()));
-    }
-
-    showMsg(msg){
+    showMsg(msg) {
       CustomSnackBar(context: context).show(msg);
     }
 
     loginOnPressed() async {
       if (formKey.currentState!.validate()) {
         var data = {
-          'email': userIdTextController.text,
-          'password': passwordTextController.text,
+          'user_id': userIdTextController.text,
+          'user_pw': passwordTextController.text,
         };
 
-        var res = await ApiCenter().requestLogin(data);
-        var body = json.decode(res.body);
-        print(body);
-        if (body['success']) {
-          SharedPreferences localStorage =
-              await SharedPreferences.getInstance();
-          localStorage.setString('token', body['token']);
-          localStorage.setString('user', json.encode(body['user']));
-          gotoAuthPage();
-        } else {
-          showMsg(body['message']);
+        print(data);
+
+        try {
+          var res = await ApiCenter().requestLogin(data);
+          var body = json.decode(res.body);
+
+          print('api response $body');
+
+          if (body['status'] == 0) {
+            body['info']['name'] = data['user_id'];
+            UserAccount().update(body['info']);
+            // ignore: use_build_context_synchronously
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) => const PageAuth()),
+              );
+          } else {
+            showMsg(body['message']);
+          }
+        } catch (e) {
+          showMsg(e.toString());
         }
       } else {
         showMsg('Error: User ID or Password');
@@ -82,7 +86,7 @@ class _PageSignInState extends State<PageSignIn> {
               BackgroundImage(animated: animated, left: 50, top: -10, h: 50),
               Column(
                 children: [
-                  const SizedBox(height: 80),
+                  const SizedBox(height: 150),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,

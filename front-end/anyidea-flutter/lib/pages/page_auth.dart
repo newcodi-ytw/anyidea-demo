@@ -1,9 +1,11 @@
 
 import 'package:anyideas/constants/data_types.dart';
+import 'package:anyideas/models/account_user.dart';
 import 'package:anyideas/pages/page_signin.dart';
 import 'package:anyideas/pages/page_staff.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
+import '../constants/pallete.dart';
 
 class PageAuth extends StatefulWidget {
   const PageAuth({super.key});
@@ -13,7 +15,7 @@ class PageAuth extends StatefulWidget {
 }
 
 class _PageAuthState extends State<PageAuth> {
-  bool _isLoggedIn = false;
+  bool _alreadyLoggedIn = false;
   AuthLevel _authLv = AuthLevel.root;
 
   @override
@@ -23,18 +25,21 @@ class _PageAuthState extends State<PageAuth> {
   }
 
   _checkLoginStatus() async {
-    SharedPreferences localStorage = await SharedPreferences.getInstance();
-    var token = localStorage.getString('token');
-    if (token != null) {
+    var token = UserAccount().token;
+    if (token != "NA") {
         setState(() {
-            _isLoggedIn = true;
-            _authLv = localStorage.getInt('authlv') as AuthLevel;
+          _alreadyLoggedIn = true;
         });
+    }
+    else
+    {
+      print("token not found!");
     }
   }
 
   _getAuthPage() {
-    if (_isLoggedIn) {
+    if (_alreadyLoggedIn) {
+      _authLv = UserAccount().authlv;
       switch (_authLv) {
         case AuthLevel.root:
         case AuthLevel.owner:
@@ -50,11 +55,22 @@ class _PageAuthState extends State<PageAuth> {
       }
     }
 
+    print("not logged in!");
+
     return const PageSignIn();
   }
 
   @override
   Widget build(BuildContext context) {
-    return _getAuthPage();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'AnyIdea Demo',
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: Pallete.backgroundColor
+      ),
+      home: Scaffold(
+        body: _getAuthPage(),
+      ),
+    );
   }
 }

@@ -2,5 +2,7 @@ enum AuthLevel {
   root,
   owner,
   staff,
-  client
+  client,
+  guest
 }
+

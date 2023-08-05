@@ -16,6 +16,8 @@ class InputFieldUserInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ctr.text = "Dummy Tester";
+    
     return ConstrainedBox(
       constraints: const BoxConstraints(
         maxWidth: 400,

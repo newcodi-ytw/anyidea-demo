@@ -14,7 +14,13 @@ class InputFieldPassword extends StatefulWidget {
 class _InputFieldPasswordState extends State<InputFieldPassword> {
   final String hintText = "Password";
   bool visibility = false;
-  
+
+  @override
+  void initState() {
+    widget.ctr.text = "pw_123";
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
